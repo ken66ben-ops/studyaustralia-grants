@@ -39,6 +39,18 @@ An independent website listing **genuine, currently open scholarships** at Austr
 2. Never invent amounts or dates. If there's no close date, leave the scholarship out.
 3. Say "fully funded" only if the page covers tuition **and** a living stipend.
 
+## Admin, posts and email alerts
+
+- **`/admin`** (password-protected): search everything, write blog posts and short updates (with an optional picture), add scholarships by hand, see and download subscribers, and send email alerts.
+- **`/updates`**: public list of posts. Each post has its own page.
+- **Subscribe form** on the home page saves visitors to the `subscribers` table. Every alert has an unsubscribe link (`/unsubscribe`).
+- Data lives in **Supabase**. Run `supabase/schema.sql` once in the Supabase SQL Editor.
+- Settings go in Vercel → Settings → Environment Variables. See `.env.example`.
+- Without these settings the site still builds and shows the weekly list. The admin and sign-up parts switch on when the keys are added.
+- Email alerts use **Resend** and need a domain you own, verified in Resend.
+
+Only the weekly update changes `data/scholarships.json` and `captions/`. Scholarships added in `/admin` are stored in the database and appear alongside the weekly list.
+
 ## Run locally
 
 ```bash
