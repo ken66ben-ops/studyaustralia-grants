@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudyAustralia Grants</title>
+<meta name="description" content="An independent guide to genuine, currently open scholarships at Edith Cowan University and other Australian universities, with links to every official application page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --surface-2:#f1eee6; --text:#1b1d1f; --muted:#5b6066;
+  --line:#e2ddd2; --brand:#0f5b52; --brand-2:#d9822b; --brand-ink:#ffffff;
+  --open:#1f7a4d; --open-bg:#e3f3ea; --soon:#9a5b00; --soon-bg:#fbefd9;
+  --closed:#7a7f86; --closed-bg:#eceae6; --upcoming:#2b5fa8; --upcoming-bg:#e3ecf8;
+  --shadow:0 1px 2px rgba(20,20,20,.04),0 8px 24px rgba(20,20,20,.06);
+  --g1:#0f5b52; --g2:#1d7f72; --g3:#d9822b;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111416; --surface:#181c1f; --surface-2:#1f2427; --text:#eceae6; --muted:#a3a8ad;
+    --line:#2b3135; --brand:#4fbfae; --brand-2:#f0a457; --brand-ink:#0d1112;
+    --open:#6fd39f; --open-bg:#173226; --soon:#f2b45b; --soon-bg:#332713;
+    --closed:#9097a0; --closed-bg:#24292d; --upcoming:#8db5ef; --upcoming-bg:#1a2638;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+    --g1:#0a3c36; --g2:#125e55; --g3:#8a4d14;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111416; --surface:#181c1f; --surface-2:#1f2427; --text:#eceae6; --muted:#a3a8ad;
+  --line:#2b3135; --brand:#4fbfae; --brand-2:#f0a457; --brand-ink:#0d1112;
+  --open:#6fd39f; --open-bg:#173226; --soon:#f2b45b; --soon-bg:#332713;
+  --closed:#9097a0; --closed-bg:#24292d; --upcoming:#8db5ef; --upcoming-bg:#1a2638;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  --g1:#0a3c36; --g2:#125e55; --g3:#8a4d14;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0}
+
+/* Glass navigation */
+.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);
+  background:color-mix(in srgb,var(--surface) 72%,transparent);border-bottom:1px solid var(--line)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.nav{background:var(--surface)}}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--text);text-decoration:none;font-family:Fraunces,Georgia,serif;font-size:1.15rem}
+.mark{width:30px;height:30px;border-radius:9px;background:conic-gradient(from 200deg,var(--g1),var(--g2),var(--g3),var(--g1));
+  animation:spin 18s linear infinite;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+@keyframes spin{to{filter:hue-rotate(25deg);transform:rotate(360deg)}}
+.nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+.nav ul a:hover,.nav ul a:focus-visible{color:var(--text)}
+.theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+@media (max-width:640px){.nav ul{display:none}}
+
+/* Animated gradient hero */
+.hero{position:relative;overflow:hidden;color:#fff;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-40%;z-index:-2;
+  background:radial-gradient(40% 50% at 20% 30%,var(--g3) 0%,transparent 60%),
+             radial-gradient(45% 55% at 80% 20%,var(--g2) 0%,transparent 60%),
+             radial-gradient(50% 60% at 60% 80%,var(--g1) 0%,transparent 65%),var(--g1);
+  animation:drift 26s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.38))}
+@keyframes drift{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(6%,-4%) rotate(8deg)}100%{transform:translate(-5%,5%) rotate(-6deg)}}
+@media (prefers-reduced-motion:reduce){.hero::before,.mark{animation:none}}
+.hero .wrap{padding:72px 16px 64px}
+.eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:4px 10px;border-radius:999px}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);margin:16px 0 14px;max-width:16ch}
+.hero p{max-width:60ch;font-size:1.08rem;opacity:.95;margin:0}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.stat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:14px;padding:12px 16px;min-width:140px}
+.stat b{display:block;font-size:1.5rem;font-family:Fraunces,Georgia,serif}
+.stat span{font-size:.85rem;opacity:.9}
+
+/* Notice */
+.notice{margin:-26px auto 0;position:relative;z-index:2;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--brand-2);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);font-size:.95rem}
+.notice strong{color:var(--text)}
+
+/* Filters */
+section{padding:48px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.section-head h2{font-size:clamp(1.5rem,3vw,2rem)}
+.section-head p{margin:6px 0 0;color:var(--muted)}
+.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;margin-bottom:18px}
+.filters input,.filters select{width:100%;font:inherit;font-size:.95rem;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
+.filters input:focus-visible,.filters select:focus-visible,.theme-btn:focus-visible,a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+@media (max-width:860px){.filters{grid-template-columns:1fr 1fr}.filters .search{grid-column:1/-1}}
+.count{color:var(--muted);font-size:.9rem;margin:0 0 12px}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+@media (max-width:400px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);transition:transform .15s ease,border-color .15s ease}
+.card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--brand) 40%,var(--line))}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+.card-top{display:flex;justify-content:space-between;align-items:start;gap:10px}
+.uni{font-size:.8rem;font-weight:600;color:var(--brand);text-transform:uppercase;letter-spacing:.04em}
+.card h3{font-size:1.15rem;margin-top:2px}
+.badge{flex-shrink:0;font-size:.75rem;font-weight:700;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.b-open{color:var(--open);background:var(--open-bg)}
+.b-soon{color:var(--soon);background:var(--soon-bg)}
+.b-closed{color:var(--closed);background:var(--closed-bg)}
+.b-upcoming{color:var(--upcoming);background:var(--upcoming-bg)}
+.value{font-weight:600;font-size:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.75rem;background:var(--surface-2);color:var(--muted);border-radius:6px;padding:3px 8px}
+.meta{font-size:.88rem;color:var(--muted);margin:0}
+.meta b{color:var(--text);font-weight:600}
+.card .note{font-size:.88rem;margin:0;color:var(--muted)}
+.card a.apply{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:600;background:var(--brand);color:var(--brand-ink);padding:10px 14px;border-radius:10px}
+.card a.apply:hover{filter:brightness(1.08)}
+.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+
+/* Info blocks */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.panel h3{font-size:1.2rem;margin-bottom:10px}
+.panel ol,.panel ul{margin:0;padding-left:20px}
+.panel li{margin:6px 0}
+.rates{width:100%;border-collapse:collapse;font-size:.93rem}
+.rates th,.rates td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+.rates th{color:var(--muted);font-weight:600}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.88rem}
+footer p{margin:6px 0}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="StudyAustralia Grants home"><span class="mark" aria-hidden="true"></span>StudyAustralia Grants</a>
+    <ul>
+      <li><a href="#scholarships">Scholarships</a></li>
+      <li><a href="#stipends">Stipend rates</a></li>
+      <li><a href="#how">How to apply</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle colour theme">Theme</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Independent scholarship guide</span>
+    <h1>Funded study in Australia, verified at the source</h1>
+    <p>Real scholarships at Edith Cowan University and other Australian universities: research stipends, tuition-fee reductions and government awards. Every listing links straight to the official university page where you apply.</p>
+    <div class="stats" aria-live="polite">
+      <div class="stat"><b id="statTotal">–</b><span>scholarships listed</span></div>
+      <div class="stat"><b id="statOpen">–</b><span>open right now</span></div>
+      <div class="stat"><b>A$37.5k–41k</b><span>typical PhD stipend / year</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="notice" role="note">
+    <strong>StudyAustralia Grants is independent and is not affiliated with any university or government.</strong>
+    We do not award scholarships, take applications or charge fees. Apply only through the official links below, and never pay anyone who promises a guaranteed scholarship. Details were checked against official pages on <b id="verifiedDate">18 October 2026</b>; always confirm on the university's site before applying.
+  </div>
+</div>
+
+<main>
+<section id="scholarships">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Scholarship listings</h2>
+        <p>Filter by university, study level, who can apply and status.</p>
+      </div>
+    </div>
+    <div class="filters" role="search">
+      <input class="search" id="q" type="search" placeholder="Search by name, university or field…" aria-label="Search scholarships">
+      <select id="fUni" aria-label="University"><option value="">All universities</option></select>
+      <select id="fLevel" aria-label="Study level">
+        <option value="">All levels</option>
+        <option>PhD / Research</option>
+        <option>Master by Coursework</option>
+        <option>Undergraduate</option>
+      </select>
+      <select id="fWho" aria-label="Who can apply">
+        <option value="">Domestic &amp; international</option>
+        <option value="intl">Open to international</option>
+        <option value="dom">Domestic only</option>
+      </select>
+      <select id="fStatus" aria-label="Status">
+        <option value="">Any status</option>
+        <option value="open">Open now</option>
+        <option value="upcoming">Opening soon</option>
+        <option value="closed">Recently closed</option>
+      </select>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="stipends" style="padding-top:0">
+  <div class="wrap two">
+    <div class="panel">
+      <h3>PhD stipend rates at a glance</h3>
+      <table class="rates">
+        <thead><tr><th>University</th><th>Stipend / year</th><th>Rate year</th></tr></thead>
+        <tbody>
+          <tr><td>Monash</td><td>A$41,100</td><td>2027</td></tr>
+          <tr><td>ANU</td><td>A$40,475</td><td>2027</td></tr>
+          <tr><td>UWA</td><td>A$39,253</td><td>2027</td></tr>
+          <tr><td>UQ</td><td>A$39,220</td><td>2026</td></tr>
+          <tr><td>Wollongong</td><td>A$38,420</td><td>2027</td></tr>
+          <tr><td>Edith Cowan</td><td>A$37,500</td><td>2027 round</td></tr>
+        </tbody>
+      </table>
+      <p class="meta" style="margin-top:10px">Stipends are tax-free for full-time candidates and indexed annually. Most research scholarships also cover tuition fees.</p>
+    </div>
+    <div class="panel" id="how">
+      <h3>How research scholarships work</h3>
+      <ol>
+        <li><b>Find a supervisor first.</b> Most PhD scholarships need written support from a principal supervisor at the university.</li>
+        <li><b>Apply for admission and the scholarship together.</b> At ECU, ANU, Monash and UWA you are considered for scholarships through the research-degree application itself.</li>
+        <li><b>Watch the round dates.</b> International rounds usually close months before domestic rounds.</li>
+        <li><b>Coursework scholarships are often automatic.</b> ECU's 2027 international tuition reductions need no separate application; you are assessed when you apply for the course.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="panel">
+      <h3>About this guide</h3>
+      <p class="meta">StudyAustralia Grants gathers publicly available scholarship information from official university and government websites so prospective students can compare options in one place. Amounts are in Australian dollars. Status labels update automatically from each listing's published dates. If you spot an error or a scholarship we've missed, please let us know so we can correct it.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>StudyAustralia Grants</b> is an independent information service. University names are used only to identify where each scholarship is offered; we are not endorsed by or affiliated with any institution listed.</p>
+    <p>Information is provided as a guide only and may change. Always confirm eligibility, values and deadlines on the official page before applying.</p>
+  </div>
+</footer>
+
+<script>
+const VERIFIED = "2026-10-18";
+const S = [
+  {uni:"Edith Cowan University", name:"ECU HDR Scholarship / RTP Stipend (2027 round)", level:"PhD / Research", who:"both",
+   value:"A$37,500 per year stipend + tuition fee sponsorship", field:"All disciplines",
+   opens:"2026-08-31", closes:"2026-10-11",
+   note:"Up to 3 years (PhD) or 2 years (Master by Research). Priority to domestic applicants; supervisor endorsement required. Includes partial OSHC reimbursement for international students.",
+   url:"https://www.ecu.edu.au/scholarships/details/ecu-hdr-scholarship"},
+  {uni:"Edith Cowan University", name:"Stan Perron Charitable Foundation – ORIGINS Collaborative PhD Scholarship", level:"PhD / Research", who:"both",
+   value:"A$37,500 stipend + A$10,000 top-up per year + tuition", field:"Childhood health",
+   opens:"2026-08-31", closes:"2026-10-11",
+   note:"Research must use data from the ORIGINS Cohort study. Includes A$5,000 for cohort data access and relocation/visa support.",
+   url:"https://www.ecu.edu.au/scholarships/details/2026-ecu-stan-perron-charitable-foundation-origins-collaborative-scholarship"},
+  {uni:"Edith Cowan University", name:"2027 ECU Success Scholarship", level:"Undergraduate", level2:"Master by Coursework", who:"intl",
+   value:"15% tuition reduction, rising to 20% then 25% as you progress", field:"Most disciplines",
+   opens:"2026-07-01", closes:"2027-12-31",
+   note:"For full-fee-paying international students starting in 2027 at Joondalup, City or South West campus. Assessed automatically when you apply for the course.",
+   url:"https://www.ecu.edu.au/scholarships/details/2027-ecu-success-scholarship"},
+  {uni:"Edith Cowan University", name:"2027 Africa International Scholarship", level:"Undergraduate", level2:"Master by Coursework", who:"intl",
+   value:"20% tuition reduction for the standard course length", field:"Most disciplines",
+   opens:"2026-07-01", closes:"2027-12-31",
+   note:"Currently limited to citizens of Mauritius and South Africa. Assessed automatically with your course application.",
+   url:"https://www.ecu.edu.au/scholarships/details/2027-africa-international-scholarship"},
+  {uni:"Edith Cowan University", name:"2027 ASEAN International Scholarship", level:"Undergraduate", level2:"Master by Coursework", who:"intl",
+   value:"20% tuition reduction for the standard course length", field:"Most disciplines",
+   opens:"2026-07-01", closes:"2027-12-31",
+   note:"For citizens of Cambodia, Indonesia, Laos, Malaysia, Philippines, Singapore, Thailand and Vietnam. No separate application.",
+   url:"https://www.ecu.edu.au/scholarships/details/2027-asean-international-scholarship"},
+  {uni:"University of Queensland", name:"Graduate Research School Scholarships (incl. RTP) – international round", level:"PhD / Research", who:"both",
+   value:"A$39,220 per year (2026 rate) + tuition + single OSHC", field:"All disciplines",
+   opens:"2026-08-20", closes:"2026-10-19",
+   note:"For starts in late 2027 or early 2028. Needs school nomination and supervisor support via an EOI on the UQ portal.",
+   url:"https://scholarships.uq.edu.au/scholarship/graduate-school-scholarships-uqgss-%E2%80%93-includes-rtp"},
+  {uni:"University of Western Australia", name:"RTP Stipend & Fee Offset – domestic round", level:"PhD / Research", who:"both",
+   value:"A$39,253 per year (2027 rate) + tuition fee offset", field:"All disciplines",
+   opens:"2026-08-01", closes:"2026-10-31",
+   note:"Open to domestic applicants and international students graduating from UWA in 2025–2026. The separate international round closed 15 Sept 2026.",
+   url:"https://www.uwa.edu.au/study/research/research-scholarships"},
+  {uni:"Australian National University", name:"ANU University Research Scholarships – Round 1 (domestic)", level:"PhD / Research", who:"dom",
+   value:"A$40,475 per year (2027 rate)", field:"All disciplines",
+   opens:"2026-08-01", closes:"2026-10-26",
+   note:"Domestic deadline moved to 26 Oct 2026. International Round 1 closed 31 Aug 2026; check the page for Round 2 dates.",
+   url:"https://study.anu.edu.au/scholarships/find-scholarship/anu-university-research-scholarships"},
+  {uni:"Monash University", name:"Monash Graduate Scholarship – Round 1 (international)", level:"PhD / Research", who:"both",
+   value:"A$41,100 per year (2027 rate)", field:"All disciplines",
+   opens:"2026-09-01", closes:"2027-02-28",
+   note:"You're automatically considered when you apply for a research degree via myApp. Domestic Round 4 closes 31 Oct.",
+   url:"https://monash.edu/study/fees-scholarships/scholarships/find-a-scholarship/monash-graduate-scholarship-mgs"},
+  {uni:"Adelaide University", name:"Graduate Research Talent Scheme – Round 1", level:"PhD / Research", who:"both",
+   value:"Stipend + 100% tuition waiver + relocation and OSHC", field:"All disciplines",
+   opens:"2026-08-01", closes:"2026-11-02",
+   note:"Domestic applicants, or international applicants with a relevant Australian/NZ qualification. Round 2 runs mid-Feb to late Mar 2027.",
+   url:"https://adelaide.edu.au/research/research-degrees/research-scholarships/"},
+  {uni:"University of Wollongong", name:"McKinnon-Walker Research Fellowship (PhD)", level:"PhD / Research", who:"both",
+   value:"Over A$200,000 total package", field:"Multidisciplinary",
+   opens:"2026-08-01", closes:"2026-10-31",
+   note:"Open to domestic and international applicants.",
+   url:"https://www.uow.edu.au/research/graduate-research/scholarships/"},
+  {uni:"University of Wollongong", name:"PhD Scholarship: Economics of University Reputation", level:"PhD / Research", who:"both",
+   value:"A$38,420 per year (indexed)", field:"Economics & business",
+   opens:"2026-09-01", closes:"2026-11-10",
+   note:"Project-based PhD; domestic and international applicants.",
+   url:"https://www.uow.edu.au/research/graduate-research/scholarships/"},
+  {uni:"University of Wollongong", name:"State Super ESG for Impact Scholarship 2027", level:"PhD / Research", level2:"Master by Coursework", who:"dom",
+   value:"A$36,000 (PhD) or A$16,000 (Masters/Honours)", field:"Environment, social & governance",
+   opens:"2026-09-01", closes:"2026-12-04",
+   note:"Domestic students only.",
+   url:"https://www.uow.edu.au/research/graduate-research/scholarships/"},
+  {uni:"Murdoch University", name:"International Welcome Scholarship 2027", level:"Undergraduate", level2:"Master by Coursework", who:"intl",
+   value:"15% tuition fee reduction", field:"Most disciplines",
+   opens:"2026-07-01", closes:"2027-09-01",
+   note:"For international students from eligible countries starting in 2027. Check the page for the country list.",
+   url:"https://www.murdoch.edu.au/study/scholarship/international-welcome-scholarship-2027-new"},
+  {uni:"Curtin University", name:"Curtin Global Merit Scholarship", level:"Undergraduate", level2:"Master by Coursework", who:"intl",
+   value:"20% tuition reduction for the full course", field:"Most disciplines",
+   opens:"2026-07-01", closes:"2027-09-01",
+   note:"Recognises academic achievement. Listing via the Australian Government's Study Australia search.",
+   url:"https://search.studyaustralia.gov.au/scholarship/curtin-global-merit-scholarship/a4cdfdf1c6755c0b8b3a4a3d6dcf271c"},
+  {uni:"Australian Government", name:"Australia Awards Scholarships – 2028 intake (Africa)", level:"PhD / Research", level2:"Master by Coursework", who:"intl",
+   value:"Fully funded government award", field:"Development priority areas",
+   opens:"2027-02-01", closes:"2027-04-30",
+   note:"2027 intake has closed; the 2028 intake opens February 2027. Closing date shown is an estimate – confirm country eligibility and dates on the official site.",
+   url:"https://australiaawardsafrica.org/awards/apply/"}
+];
+
+const today = new Date(); today.setHours(0,0,0,0);
+const d = s => { const [y,m,dd]=s.split("-").map(Number); return new Date(y,m-1,dd); };
+const fmt = s => d(s).toLocaleDateString("en-AU",{day:"numeric",month:"short",year:"numeric"});
+function status(x){
+  const o=d(x.opens), c=d(x.closes);
+  if (today < o) return {k:"upcoming", label:"Opens "+fmt(x.opens)};
+  if (today > c) return {k:"closed", label:"Closed"};
+  const days = Math.round((c-today)/864e5);
+  if (days <= 21) return {k:"open", soon:true, label: days===0 ? "Closes today" : `Closes in ${days} day${days>1?"s":""}`};
+  return {k:"open", label:"Open"};
+}
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const grid=document.getElementById("grid"), q=document.getElementById("q"),
+  fUni=document.getElementById("fUni"), fLevel=document.getElementById("fLevel"),
+  fWho=document.getElementById("fWho"), fStatus=document.getElementById("fStatus"), count=document.getElementById("count");
+
+[...new Set(S.map(x=>x.uni))].sort().forEach(u=>{const o=document.createElement("option");o.textContent=u;fUni.appendChild(o);});
+document.getElementById("statTotal").textContent=S.length;
+document.getElementById("statOpen").textContent=S.filter(x=>status(x).k==="open").length;
+document.getElementById("verifiedDate").textContent=fmt(VERIFIED);
+
+const order={open:0,upcoming:1,closed:2};
+function render(){
+  const term=q.value.trim().toLowerCase();
+  const rows=S.filter(x=>{
+    const st=status(x);
+    if (fUni.value && x.uni!==fUni.value) return false;
+    if (fLevel.value && x.level!==fLevel.value && x.level2!==fLevel.value) return false;
+    if (fWho.value==="intl" && x.who==="dom") return false;
+    if (fWho.value==="dom" && x.who!=="dom") return false;
+    if (fStatus.value && st.k!==fStatus.value) return false;
+    if (term && !(x.name+" "+x.uni+" "+x.field+" "+x.note).toLowerCase().includes(term)) return false;
+    return true;
+  }).sort((a,b)=>{
+    const sa=status(a), sb=status(b);
+    return (order[sa.k]-order[sb.k]) || (d(a.closes)-d(b.closes));
+  });
+  count.textContent = `Showing ${rows.length} of ${S.length} scholarships`;
+  if(!rows.length){grid.innerHTML='<div class="empty">No scholarships match these filters. Try widening your search.</div>';return;}
+  grid.innerHTML=rows.map(x=>{
+    const st=status(x);
+    const cls= st.k==="open" ? (st.soon?"b-soon":"b-open") : (st.k==="upcoming"?"b-upcoming":"b-closed");
+    const who = x.who==="dom" ? "Domestic only" : x.who==="intl" ? "International students" : "Domestic & international";
+    const levels = [x.level, x.level2].filter(Boolean);
+    return `<article class="card">
+      <div class="card-top"><div><div class="uni">${esc(x.uni)}</div><h3>${esc(x.name)}</h3></div>
+      <span class="badge ${cls}">${esc(st.label)}</span></div>
+      <div class="value">${esc(x.value)}</div>
+      <div class="tags">${levels.map(l=>`<span class="tag">${esc(l)}</span>`).join("")}<span class="tag">${who}</span><span class="tag">${esc(x.field)}</span></div>
+      <p class="meta"><b>Closes:</b> ${fmt(x.closes)}</p>
+      <p class="note">${esc(x.note)}</p>
+      <a class="apply" href="${x.url}" target="_blank" rel="noopener">View official page ↗</a>
+    </article>`;
+  }).join("");
+}
+[q,fUni,fLevel,fWho,fStatus].forEach(el=>el.addEventListener("input",render));
+render();
+
+/* Theme toggle (per-viewer convenience) */
+const root=document.documentElement, btn=document.getElementById("themeBtn");
+try{const t=localStorage.getItem("sag-theme"); if(t) root.setAttribute("data-theme",t);}catch(e){}
+btn.addEventListener("click",()=>{
+  const cur=root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const next=cur==="dark"?"light":"dark"; root.setAttribute("data-theme",next);
+  try{localStorage.setItem("sag-theme",next);}catch(e){}
+});
+</script>
+</body>
+</html>
