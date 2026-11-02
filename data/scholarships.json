@@ -1,5 +1,5 @@
 {
-  "verified": "2026-10-26",
+  "verified": "2026-11-01",
   "scholarships": [
     {
       "id": "unsw-intl-t1-2027",
@@ -13,7 +13,9 @@
       "opens": "2026-07-06",
       "closes": "2026-10-30",
       "url": "https://www.scholarships.unsw.edu.au/scholarships/id/1988",
-      "notes": "Closes 11:59pm AEST. Page lists two different open dates (6 and 15 July 2026)."
+      "notes": "Closes 11:59pm AEST. Page lists two different open dates (6 and 15 July 2026).",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "rmit-research-stipend-2027-domestic",
@@ -27,7 +29,9 @@
       "opens": "2026-06-01",
       "closes": "2026-10-30",
       "url": "https://www.rmit.edu.au/scholarships/research/research-stipend",
-      "notes": "Close date from https://www.rmit.edu.au/research/research-degrees/how-to-apply"
+      "notes": "Close date from https://www.rmit.edu.au/research/research-degrees/how-to-apply",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "monash-rtp-round4-domestic",
@@ -41,7 +45,9 @@
       "opens": null,
       "closes": "2026-10-31",
       "url": "https://www.monash.edu/study/fees-scholarships/scholarships/find-a-scholarship/research-training-program-scholarship",
-      "notes": "Page states 'Round 4 (Domestic) closes 31 October' without a year. Next international round (Round 1) closes 28 February."
+      "notes": "Page states 'Round 4 (Domestic) closes 31 October' without a year. Next international round (Round 1) closes 28 February.",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "uwa-hdr-2027-domestic-round",
@@ -55,7 +61,9 @@
       "opens": null,
       "closes": "2026-10-31",
       "url": "https://www.uwa.edu.au/study/scholarships-and-fees/scholarships/hdr-scholarships",
-      "notes": "Closes 11:59pm AWST. 2027 international round closed 15 Sep 2026."
+      "notes": "Closes 11:59pm AWST. 2027 international round closed 15 Sep 2026.",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "adelaide-grts-round1-2027",
@@ -69,7 +77,9 @@
       "opens": null,
       "closes": "2026-11-02",
       "url": "https://adelaide.edu.au/research/research-degrees/research-scholarships/",
-      "notes": "Closes 5pm ACDT. Stipend amount is in the Conditions of Award PDF, not on the page."
+      "notes": "Closes 5pm ACDT. Stipend amount is in the Conditions of Award PDF, not on the page.",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "uts-vc-intl-undergraduate-2027",
@@ -83,7 +93,9 @@
       "opens": "2026-10-01",
       "closes": "2026-11-02",
       "url": "https://www.uts.edu.au/for-students/admissions-entry/scholarships/scholarships-search/uts-vice-chancellors-international-undergraduate-scholarship",
-      "notes": "Closes 11:55pm AEST. For Autumn 2027 (February) commencement."
+      "notes": "Closes 11:55pm AEST. For Autumn 2027 (February) commencement.",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "curtin-star-s1-2027",
@@ -97,7 +109,9 @@
       "opens": "2026-07-22",
       "closes": "2026-11-23",
       "url": "https://scholarships.curtin.edu.au/Scholarship/?id=7874",
-      "notes": null
+      "notes": null,
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "griffith-vc-intl-t1-2027",
@@ -111,7 +125,9 @@
       "opens": null,
       "closes": "2026-11-28",
       "url": "https://www.griffith.edu.au/international/scholarships-finance/scholarships/vice-chancellors-international-scholarship",
-      "notes": "Trimester 1 2027 deadline. Australian Year 12 completers: 2 Jan 2027. Trimester 2 2027: 10 Apr 2027."
+      "notes": "Trimester 1 2027 deadline. Australian Year 12 completers: 2 Jan 2027. Trimester 2 2027: 10 Apr 2027.",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "usyd-rtp-intl-rp3-4-2027",
@@ -125,7 +141,9 @@
       "opens": null,
       "closes": "2026-12-18",
       "url": "https://www.sydney.edu.au/scholarships/australian-government-research-training-program/rtp-international.html",
-      "notes": "Deadline for Research Periods 3 and 4, 2027. Fully funded (tuition + stipend)."
+      "notes": "Deadline for Research Periods 3 and 4, 2027. Fully funded (tuition + stipend).",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "cdu-vcihas-2027",
@@ -139,7 +157,9 @@
       "opens": null,
       "closes": "2027-01-31",
       "url": "https://www.cdu.edu.au/international/how-apply/scholarships",
-      "notes": "Semester 1 2027 deadline; Semester 2 2027 closes 4 Jul 2027."
+      "notes": "Semester 1 2027 deadline; Semester 2 2027 closes 4 Jul 2027.",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "jcu-intl-hdr-july-2027",
@@ -153,7 +173,9 @@
       "opens": null,
       "closes": "2027-02-01",
       "url": "https://www.jcu.edu.au/graduate-research-school/doctor-of-philosophy-candidates/postgraduate-research-scholarships/hdr-scholarships-for-international-candidates",
-      "notes": "For July 2027 commencement. Fully funded (tuition + stipend) for iRTP."
+      "notes": "For July 2027 commencement. Fully funded (tuition + stipend) for iRTP.",
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "curtin-global-talent-2027",
@@ -167,7 +189,9 @@
       "opens": "2026-07-27",
       "closes": "2027-10-01",
       "url": "https://scholarships.curtin.edu.au/Scholarship/?id=7994",
-      "notes": null
+      "notes": null,
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "ecu-africa-intl-2027",
@@ -181,7 +205,9 @@
       "opens": "2026-07-01",
       "closes": "2027-12-31",
       "url": "https://www.ecu.edu.au/scholarships/details/2027-africa-international-scholarship",
-      "notes": null
+      "notes": null,
+      "country": "Australia",
+      "region": "oceania"
     },
     {
       "id": "ecu-success-2027",
@@ -195,7 +221,281 @@
       "opens": "2026-07-01",
       "closes": "2027-12-31",
       "url": "https://www.ecu.edu.au/scholarships/details/2027-ecu-success-scholarship",
-      "notes": null
+      "notes": null,
+      "country": "Australia",
+      "region": "oceania"
+    },
+    {
+      "id": "university-of-auckland-doctoral-scholarship-feb-2027",
+      "university": "University of Auckland",
+      "name": "University of Auckland Doctoral Scholarship (UoADS)",
+      "amount": "NZ$35,468 per year tax-free stipend (2026 rate) plus tuition fees for up to 42 months",
+      "level": "PhD / Doctoral",
+      "field": "All fields",
+      "eligibility": "Anyone offered a place in a University of Auckland doctoral programme is considered (international doctoral students who pay domestic fees included); must not already hold a doctorate.",
+      "international": true,
+      "opens": null,
+      "closes": "2027-02-01",
+      "url": "https://www.auckland.ac.nz/en/study/scholarships-and-awards/scholarship-types/postgraduate-scholarships/doctoral-scholarships.html",
+      "notes": "Fully funded (tuition + stipend). Next rounds: 1 Feb, 1 May and 1 Aug 2027. No separate application; confirm interest on the doctoral application. Some professional doctorates excluded for international students.",
+      "country": "New Zealand",
+      "region": "oceania"
+    },
+    {
+      "id": "waikato-vc-international-excellence-2027-a",
+      "university": "University of Waikato",
+      "name": "Vice-Chancellor's International Excellence Scholarship",
+      "amount": "Up to NZ$15,000 towards tuition fees",
+      "level": "Undergraduate and taught postgraduate (not PhD/MPhil)",
+      "field": "All fields",
+      "eligibility": "New full-time international students with an offer of place and at least a B+ GPA equivalent.",
+      "international": true,
+      "opens": null,
+      "closes": "2026-11-29",
+      "url": "https://www.waikato.ac.nz/int/study/scholarships/find-a-scholarship/vice-chancellors-international-excellence-scholarship/",
+      "notes": "For A Trimester 2027 offers; applications must arrive before 30 November. Later rounds: 31 May, 31 Aug, 31 Oct.",
+      "country": "New Zealand",
+      "region": "oceania"
+    },
+    {
+      "id": "wellington-doctoral-scholarship-march-2027",
+      "university": "Te Herenga Waka – Victoria University of Wellington",
+      "name": "Wellington Doctoral Scholarship",
+      "amount": "NZ$32,000 stipend per year plus tuition fees (up to three years)",
+      "level": "PhD",
+      "field": "All fields",
+      "eligibility": "Graduates of any university, in NZ or overseas, enrolling full-time in a first PhD at Victoria University of Wellington.",
+      "international": true,
+      "opens": null,
+      "closes": "2027-03-01",
+      "url": "https://www.wgtn.ac.nz/scholarships/current/victoria-doctoral-scholarships",
+      "notes": "Fully funded (tuition + stipend). Rounds close 1 March, 1 July and 1 November each year; year inferred from this annual cycle.",
+      "country": "New Zealand",
+      "region": "oceania"
+    },
+    {
+      "id": "uc-doctoral-scholarship-may-2027",
+      "university": "University of Canterbury",
+      "name": "UC Doctoral Scholarship (May 2027 round)",
+      "amount": "NZ$32,650 per 120 points plus thesis tuition, up to 360 points",
+      "level": "PhD / Doctoral",
+      "field": "All fields",
+      "eligibility": "Applicants admitted to a UC research doctorate with first-class honours or master's equivalent, starting in the second half of 2027.",
+      "international": true,
+      "opens": "2027-03-20",
+      "closes": "2027-05-15",
+      "url": "https://www.canterbury.ac.nz/study/getting-started/scholarships/doctoral-scholarships/uc-doctoral-scholarships",
+      "notes": "Must also apply for doctoral admission. The page doesn't mention international students explicitly; confirm with UC before applying.",
+      "country": "New Zealand",
+      "region": "oceania"
+    },
+    {
+      "id": "gates-cambridge-scholarship-2027",
+      "university": "University of Cambridge (Gates Cambridge Trust)",
+      "name": "Gates Cambridge Scholarship",
+      "amount": "Full university fee plus £23,152 maintenance for 12 months (2026-27 rate), airfares, visa costs and health surcharge",
+      "level": "PhD, MLitt and one-year postgraduate (Master's)",
+      "field": "All fields",
+      "eligibility": "Citizens of any country outside the UK applying for a full-time PhD, MLitt or one-year postgraduate course at Cambridge.",
+      "international": true,
+      "opens": "2026-09-11",
+      "closes": "2026-12-08",
+      "url": "https://www.gatescambridge.org/apply/timeline/",
+      "notes": "Fully funded. Deadline is 8 Dec 2026 or 6 Jan 2027 depending on your course (check the Cambridge Course Directory); 11:59pm UK time. US round has closed.",
+      "country": "United Kingdom",
+      "region": "europe"
+    },
+    {
+      "id": "imperial-presidents-phd-scholarships-2027",
+      "university": "Imperial College London",
+      "name": "President's PhD Scholarships",
+      "amount": "Full tuition plus £27,036 per year stipend (2027-28 rate) and £2,000 per year consumables (first 3 years)",
+      "level": "PhD",
+      "field": "All fields",
+      "eligibility": "No nationality restrictions (some departments may not support international candidates); contact an Imperial supervisor and apply through admissions.",
+      "international": true,
+      "opens": null,
+      "closes": "2027-03-01",
+      "url": "https://www.imperial.ac.uk/study/fees-and-funding/postgraduate-doctoral/grants-scholarships/presidents-phd/",
+      "notes": "Fully funded. Three rounds: 2 Nov 2026, 11 Jan 2027 and 1 Mar 2027 (23:59 UK time). Applying early is advised.",
+      "country": "United Kingdom",
+      "region": "europe"
+    },
+    {
+      "id": "leiden-excellence-scholarship-lexs-2027",
+      "university": "Leiden University",
+      "name": "Leiden University Excellence Scholarship (LExS)",
+      "amount": "Tuition fee reduction of €10,000 to €19,000",
+      "level": "Master's",
+      "field": "Most fields (some Law LLM and MSc programmes excluded)",
+      "eligibility": "Non-EEA/non-EFTA passport holders applying to a Leiden Master's programme starting in September.",
+      "international": true,
+      "opens": null,
+      "closes": "2026-12-01",
+      "url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
+      "notes": "Admission application and LExS motivation letter must both be in by the deadline. February starts excluded.",
+      "country": "Netherlands",
+      "region": "europe"
+    },
+    {
+      "id": "france-excellence-eiffel-2027",
+      "university": "Campus France (French Ministry for Europe and Foreign Affairs)",
+      "name": "France Excellence Eiffel Scholarship",
+      "amount": "€1,200 per month (Master's) or €2,100 per month (PhD), plus travel, insurance and housing help; tuition not covered",
+      "level": "Master's and PhD",
+      "field": "Science, engineering, health, law, politics, economics and management (see official list)",
+      "eligibility": "International students up to 29 (Master's) or 35 (PhD), nominated by a French university. Students can't apply directly.",
+      "international": true,
+      "opens": "2026-10-01",
+      "closes": "2027-01-06",
+      "url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence",
+      "notes": "6 Jan 2027 is the deadline for French universities to submit nominations; the university's own internal deadline will be earlier, so contact them now.",
+      "country": "France",
+      "region": "europe"
+    },
+    {
+      "id": "edinburgh-global-ug-mathematics-2027",
+      "university": "University of Edinburgh",
+      "name": "Edinburgh Global Undergraduate Mathematics Scholarships",
+      "amount": "£5,000 each",
+      "level": "Undergraduate",
+      "field": "Mathematics",
+      "eligibility": "Applicants with International/EU fee status accepted for full-time undergraduate study in the School of Mathematics.",
+      "international": true,
+      "opens": null,
+      "closes": "2027-03-31",
+      "url": "https://registryservices.ed.ac.uk/student-funding/undergraduate/international/mathematics",
+      "notes": "Deadline 23:59 UK time.",
+      "country": "United Kingdom",
+      "region": "europe"
+    },
+    {
+      "id": "princeton-spia-mpa-funding-2027",
+      "university": "Princeton University (School of Public and International Affairs)",
+      "name": "Princeton SPIA MPA Funding",
+      "amount": "100% of tuition and required fees for all MPA students, plus a need-based living stipend for two years",
+      "level": "Master's",
+      "field": "Public and international affairs",
+      "eligibility": "Domestic and international applicants to the two-year Master in Public Affairs (GRE required).",
+      "international": true,
+      "opens": null,
+      "closes": "2026-12-01",
+      "url": "https://spia.princeton.edu/admissions/master-public-affairs/application",
+      "notes": "Funding comes with admission; no separate scholarship form. Deadline 11:59pm ET.",
+      "country": "United States",
+      "region": "usa"
+    },
+    {
+      "id": "vanderbilt-cornelius-vanderbilt-2027",
+      "university": "Vanderbilt University",
+      "name": "Cornelius Vanderbilt Scholarship",
+      "amount": "Full tuition plus a one-time summer stipend",
+      "level": "Undergraduate",
+      "field": "All fields",
+      "eligibility": "First-year applicants, international applicants included, who submit the separate merit scholarship application.",
+      "international": true,
+      "opens": null,
+      "closes": "2026-12-01",
+      "url": "https://www.vanderbilt.edu/scholarships/signature/",
+      "notes": "Separate merit application in MyAppVU, as well as the admission application. Housing and food not included.",
+      "country": "United States",
+      "region": "usa"
+    },
+    {
+      "id": "vanderbilt-ingram-scholars-2027",
+      "university": "Vanderbilt University",
+      "name": "Ingram Scholars Program",
+      "amount": "Full tuition, required fees and on-campus housing each year, plus a summer service stipend",
+      "level": "Undergraduate",
+      "field": "All fields",
+      "eligibility": "First-year applicants, international included, with a strong commitment to community service.",
+      "international": true,
+      "opens": null,
+      "closes": "2026-12-01",
+      "url": "https://www.vanderbilt.edu/scholarships/ingram/",
+      "notes": "Apply through your MyAppVU account.",
+      "country": "United States",
+      "region": "usa"
+    },
+    {
+      "id": "fulbright-canada-traditional-student-2027",
+      "university": "Fulbright Canada",
+      "name": "Fulbright Canada Traditional Student Awards",
+      "amount": "US$25,000 for one academic year (8 months)",
+      "level": "Master's, PhD and young professionals",
+      "field": "All fields",
+      "eligibility": "Canadian citizens only, who want to study or do research in the United States in 2027-28.",
+      "international": true,
+      "opens": null,
+      "closes": "2026-11-15",
+      "url": "https://www.fulbright.ca/programs/canadian-students/traditional-awards",
+      "notes": "For Canadians going to the US. Awards start September 2027.",
+      "country": "United States",
+      "region": "usa"
+    },
+    {
+      "id": "york-pise-2027",
+      "university": "York University",
+      "name": "President's International Scholarship of Excellence",
+      "amount": "C$180,000 over four years (C$45,000 per year)",
+      "level": "Undergraduate (first year)",
+      "field": "All fields",
+      "eligibility": "International high-school students entering first year at York in Fall 2027 with at least an 80% average, nominated by their school.",
+      "international": true,
+      "opens": "2026-11-01",
+      "closes": "2027-01-27",
+      "url": "https://futurestudents.yorku.ca/presidents-international-scholarship-excellence",
+      "notes": "Application due 11:59pm EST; school nomination and reference due 4 Feb 2027. Max two nominees per school.",
+      "country": "Canada",
+      "region": "canada"
+    },
+    {
+      "id": "sfu-undergraduate-scholars-entrance-2027",
+      "university": "Simon Fraser University",
+      "name": "Undergraduate Scholars Entrance Scholarship (USES)",
+      "amount": "C$140,000 for international students (8 × C$17,500)",
+      "level": "Undergraduate (first year)",
+      "field": "All fields",
+      "eligibility": "High-school applicants for Fall 2027 with at least a 90% average (or 31 IB points) and strong extracurriculars.",
+      "international": true,
+      "opens": "2026-10-01",
+      "closes": "2026-12-15",
+      "url": "https://www.sfu.ca/students/financial-aid/entrance/highschool/uses.html",
+      "notes": "Deadline 11:59pm Pacific. References and full admission file due 31 Jan 2027.",
+      "country": "Canada",
+      "region": "canada"
+    },
+    {
+      "id": "western-ogs-2027-28",
+      "university": "Western University",
+      "name": "Ontario Graduate Scholarship (OGS)",
+      "amount": "C$15,000 per year",
+      "level": "Research Master's and PhD",
+      "field": "All fields (programs that offer OGS)",
+      "eligibility": "Full-time students in, or applying to, a research graduate program at Western; international students need a valid study permit.",
+      "international": true,
+      "opens": "2026-12-09",
+      "closes": "2027-01-29",
+      "url": "https://grad.uwo.ca/funding/scholarships-and-awards/ogs.cfm",
+      "notes": "Closes 4:00pm ET. Check your program offers OGS.",
+      "country": "Canada",
+      "region": "canada"
+    },
+    {
+      "id": "ubc-international-scholars-2027",
+      "university": "University of British Columbia",
+      "name": "International Scholars Program (incl. Karen McKellin International Leader of Tomorrow Award)",
+      "amount": "Value varies (not stated on UBC's official page)",
+      "level": "Undergraduate (first year)",
+      "field": "Most fields (some programs excluded)",
+      "eligibility": "International students coming straight from secondary school with top grades, leadership and significant financial need.",
+      "international": true,
+      "opens": null,
+      "closes": "2026-11-15",
+      "url": "https://undergraduatescholarships.ubc.ca/prog/2027_international_scholars_program_application/",
+      "notes": "Deadline 11:59pm Pacific, same day as the UBC admission deadline. Nominator and teacher forms are due a few days earlier.",
+      "country": "Canada",
+      "region": "canada"
     }
   ]
 }

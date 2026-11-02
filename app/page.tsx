@@ -4,6 +4,7 @@ import SubscribeForm from "./SubscribeForm";
 import { SiteNav, SiteFooter } from "./SiteChrome";
 import { allScholarships, isClosed, formatDate, verified, todayAU } from "@/lib/scholarships";
 import { listPosts } from "@/lib/posts";
+import { REGIONS } from "@/lib/site";
 
 export const revalidate = 300; // refresh every 5 minutes (admin changes also refresh it instantly)
 
@@ -22,7 +23,8 @@ export default async function Home() {
   const open = rows.filter((r) => !r.closed);
   const thisMonth = open.filter((r) => r.daysLeft <= 30).length;
   const intl = open.filter((r) => r.international).length;
-  const unis = new Set(open.map((r) => r.university)).size;
+  const countries = new Set(open.map((r) => r.country)).size;
+  const regionCounts = Object.fromEntries(REGIONS.map((g) => [g.id, open.filter((r) => r.region === g.id).length]));
 
   return (
     <>
@@ -34,22 +36,27 @@ export default async function Home() {
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="pill">✨ Free · Official links only · No agents</p>
-              <h1>Your future in Australia <span className="hl">starts with a scholarship.</span></h1>
+              <h1>Study abroad. <span className="hl">Start with a scholarship.</span></h1>
               <p className="hero-lede">
-                Real, open scholarships at Australian universities for undergrad, Master&apos;s and PhD students.
-                Every listing is checked against the official university page.
+                Real, open scholarships in Australia, New Zealand, Europe &amp; the UK, the USA and Canada for undergrad,
+                Master&apos;s and PhD students. Every listing is checked against the official university page.
               </p>
               <div className="hero-actions">
                 <a href="#scholarships" className="btn btn-sun">Browse scholarships →</a>
-                <a href="#subscribe" className="btn btn-ghost">🔔 Get deadline alerts</a>
+                <a href="/register" className="btn btn-ghost">✍️ Register free</a>
               </div>
-              <p className="hero-meta">Last checked {formatDate(verified)} · Updated every week</p>
+              <div className="region-strip">
+                {REGIONS.map((g) => (
+                  <a key={g.id} href={`/?region=${g.id}#scholarships`} className="region-pill">{g.emoji} {g.short} <b>{regionCounts[g.id]}</b></a>
+                ))}
+              </div>
+              <p className="hero-meta">List updated {formatDate(verified)} · New scholarships every week</p>
             </div>
             <div className="hero-art" aria-hidden="true">
               <div className="sticker s1"><span>🎓</span><b>{open.length}</b> open now</div>
               <div className="sticker s2"><span>⏰</span><b>{thisMonth}</b> closing in 30 days</div>
               <div className="sticker s3"><span>🌏</span><b>{intl}</b> for international students</div>
-              <div className="sticker s4"><span>🏛️</span><b>{unis}</b> universities</div>
+              <div className="sticker s4"><span>✈️</span><b>{countries}</b> countries</div>
               <div className="orbit" />
             </div>
           </div>
@@ -62,14 +69,14 @@ export default async function Home() {
       <main className="wrap">
         <section className="steps" aria-label="How it works">
           <div className="step"><span className="step-icon">🔍</span><div><h3>Find</h3><p>Filter by level, field and who can apply.</p></div></div>
-          <div className="step"><span className="step-icon">✅</span><div><h3>Check</h3><p>Open the official university page and read the details.</p></div></div>
-          <div className="step"><span className="step-icon">🚀</span><div><h3>Apply</h3><p>Apply directly with the university. It&apos;s always free.</p></div></div>
+          <div className="step"><span className="step-icon">✍️</span><div><h3>Register</h3><p>Sign up once, free. Get alerts, updates and guides.</p></div></div>
+          <div className="step"><span className="step-icon">🚀</span><div><h3>Apply</h3><p>Open the official page and apply directly with the university. Always free.</p></div></div>
         </section>
 
         <section id="scholarships" className="section">
           <div className="section-head">
             <h2>Open scholarships</h2>
-            <p>Closing soonest first. Tap a card&apos;s button to go to the official page.</p>
+            <p>Closing soonest first. Register once (free) to open any scholarship&apos;s official application page.</p>
           </div>
           <ScholarshipList rows={rows} />
         </section>

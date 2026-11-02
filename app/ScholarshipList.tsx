@@ -1,6 +1,7 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Scholarship } from "@/lib/scholarships";
+import { REGIONS, REGION_IDS, flagFor, type Region } from "@/lib/site";
 
 export type Row = Scholarship & { closed: boolean; closesLabel: string; daysLeft: number };
 
@@ -53,21 +54,41 @@ function countdown(r: Row): { text: string; tone: "urgent" | "soon" | "later" | 
 }
 
 export default function ScholarshipList({ rows }: { rows: Row[] }) {
+  const [region, setRegion] = useState<Region | "all">("all");
   const [filter, setFilter] = useState<Filter>("all");
+
+  // Region links like /?region=europe#scholarships pre-select a tab.
+  useEffect(() => {
+    const r = new URLSearchParams(window.location.search).get("region");
+    if (r && (REGION_IDS as string[]).includes(r)) setRegion(r as Region);
+  }, []);
+
+  const regionCount = (id: Region | "all") => rows.filter((s) => !s.closed && (id === "all" || s.region === id)).length;
   const [q, setQ] = useState("");
   const query = q.trim().toLowerCase();
 
   const shown = useMemo(() => rows.filter((s) =>
+    (region === "all" || s.region === region) &&
     matches(s, filter) &&
-    (!query || `${s.university} ${s.name} ${s.level} ${s.field} ${s.eligibility}`.toLowerCase().includes(query))
-  ), [rows, filter, query]);
+    (!query || `${s.university} ${s.name} ${s.level} ${s.field} ${s.eligibility} ${s.country}`.toLowerCase().includes(query))
+  ), [rows, region, filter, query]);
 
   return (
     <>
+      <div className="region-tabs" role="tablist" aria-label="Choose a region">
+        {[{ id: "all" as const, label: "All regions", emoji: "🌍" }, ...REGIONS.map((g) => ({ id: g.id, label: g.label, emoji: g.emoji }))].map((g) => (
+          <button key={g.id} type="button" role="tab" aria-selected={region === g.id}
+            className={`region-tab${region === g.id ? " active" : ""}`} onClick={() => setRegion(g.id)}>
+            <span className="rt-emoji" aria-hidden="true">{g.emoji}</span>
+            <span className="rt-label">{g.label}</span>
+            <span className="rt-count">{regionCount(g.id)}</span>
+          </button>
+        ))}
+      </div>
       <div className="finder">
         <div className="search-box">
           <span aria-hidden="true">🔎</span>
-          <input type="search" placeholder="Search a university, course or level…" value={q}
+          <input type="search" placeholder="Search a university, country, course or level…" value={q}
             onChange={(e) => setQ(e.target.value)} aria-label="Search scholarships" />
         </div>
         <div className="chips" role="group" aria-label="Filter scholarships">
@@ -91,7 +112,7 @@ export default function ScholarshipList({ rows }: { rows: Row[] }) {
               <li key={`${s.source}-${s.id}`} className={`s-card tone-${cd.tone}`}>
                 <div className="s-top">
                   <span className="avatar" style={{ background: colorFor(s.university) }} aria-hidden="true">{initials(s.university)}</span>
-                  <span className="s-uni">{s.university}</span>
+                  <span className="s-uni">{s.university}<small className="s-country">{flagFor(s.country)} {s.country}</small></span>
                   <span className={`countdown ${cd.tone}`}>{cd.text}</span>
                 </div>
                 <h3>{s.name}</h3>
@@ -105,7 +126,7 @@ export default function ScholarshipList({ rows }: { rows: Row[] }) {
                 {s.notes && <p className="note">ℹ️ {s.notes}</p>}
                 <div className="s-foot">
                   <span className="date">📅 {s.closesLabel}</span>
-                  <a className="btn btn-apply" href={s.url} target="_blank" rel="noopener noreferrer">Official page ↗</a>
+                  <a className="btn btn-apply" href={`/go/${encodeURIComponent(s.id)}`} rel="nofollow">Apply on official site →</a>
                 </div>
               </li>
             );

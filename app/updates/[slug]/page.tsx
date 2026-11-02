@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import { getPost } from "@/lib/posts";
 import { formatDate } from "@/lib/scholarships";
 import PostBody from "../../PostBody";
@@ -13,8 +14,8 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost((await params).slug);
   return post
-    ? { title: `${post.title} – StudyAustralia Grants`, description: post.summary ?? undefined, openGraph: post.image_url ? { images: [post.image_url] } : undefined }
-    : { title: "Not found – StudyAustralia Grants" };
+    ? { title: `${post.title} – ${SITE_NAME}`, description: post.summary ?? undefined, openGraph: post.image_url ? { images: [post.image_url] } : undefined }
+    : { title: `Not found – ${SITE_NAME}` };
 }
 
 export default async function PostPage({ params }: Props) {

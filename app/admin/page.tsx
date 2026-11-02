@@ -5,14 +5,17 @@ import { emailConfigured } from "@/lib/email";
 import { allScholarships, formatDate, isClosed } from "@/lib/scholarships";
 import { listPosts } from "@/lib/posts";
 import Notice, { DbMissing } from "./Notice";
+import { flagFor } from "@/lib/site";
 
 type Props = { searchParams: Promise<{ q?: string; msg?: string }> };
 
 async function counts() {
   const client = db();
-  if (!client) return { subscribers: 0 };
+  if (!client) return { subscribers: 0, clicks: 0 };
   const { count } = await client.from("subscribers").select("id", { count: "exact", head: true }).is("unsubscribed_at", null);
-  return { subscribers: count ?? 0 };
+  const since = new Date(Date.now() - 30 * 86_400_000).toISOString();
+  const { count: clicks } = await client.from("clicks").select("id", { count: "exact", head: true }).gte("created_at", since);
+  return { subscribers: count ?? 0, clicks: clicks ?? 0 };
 }
 
 export default async function AdminHome({ searchParams }: Props) {
@@ -23,7 +26,7 @@ export default async function AdminHome({ searchParams }: Props) {
   const [scholarships, posts, c] = await Promise.all([allScholarships(), listPosts({ includeDrafts: true }), counts()]);
   const open = scholarships.filter((s) => !isClosed(s)).length;
 
-  const sHits = query ? scholarships.filter((s) => `${s.university} ${s.name} ${s.level} ${s.field} ${s.eligibility}`.toLowerCase().includes(query)) : [];
+  const sHits = query ? scholarships.filter((s) => `${s.university} ${s.name} ${s.level} ${s.field} ${s.eligibility} ${s.country}`.toLowerCase().includes(query)) : [];
   const pHits = query ? posts.filter((p) => `${p.title} ${p.summary ?? ""} ${p.body}`.toLowerCase().includes(query)) : [];
 
   return (
@@ -33,7 +36,8 @@ export default async function AdminHome({ searchParams }: Props) {
       <div className="stats">
         <div><strong>{open}</strong><span>open scholarships</span></div>
         <div><strong>{posts.length}</strong><span>posts</span></div>
-        <div><strong>{c.subscribers}</strong><span>subscribers</span></div>
+        <div><strong>{c.subscribers}</strong><span>registered members</span></div>
+        <div><strong>{c.clicks}</strong><span>applications opened (30 days)</span></div>
         <div><strong>{emailConfigured() ? "On" : "Off"}</strong><span>email alerts</span></div>
       </div>
 
@@ -56,7 +60,7 @@ export default async function AdminHome({ searchParams }: Props) {
             <tbody>
               {sHits.map((s) => (
                 <tr key={`${s.source}-${s.id}`}>
-                  <td>{s.university}</td>
+                  <td>{flagFor(s.country)} {s.university}</td>
                   <td><a href={s.url} target="_blank" rel="noopener noreferrer">{s.name}</a></td>
                   <td>{formatDate(s.closes)}{isClosed(s) && " (closed)"}</td>
                   <td>{s.source === "admin" ? "Added by you" : "Weekly list"}</td>

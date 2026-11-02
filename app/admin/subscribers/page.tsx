@@ -18,7 +18,7 @@ export default async function SubscribersAdmin() {
   return (
     <>
       {!dbConfigured() && <DbMissing />}
-      <h1>Subscribers</h1>
+      <h1>Registered members</h1>
       <p>{active} active · {subs.length - active} unsubscribed · <a href="/admin/subscribers/export">Download as spreadsheet (CSV)</a></p>
       <table className="table">
         <thead><tr><th>Email</th><th>Name</th><th>Interests</th><th>Joined</th><th>Status</th><th></th></tr></thead>

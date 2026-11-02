@@ -1,5 +1,6 @@
 import "server-only";
 import { siteUrl } from "@/lib/supabase";
+import { SITE_NAME } from "@/lib/site";
 
 export function emailConfigured(): boolean {
   return Boolean(process.env.RESEND_API_KEY && process.env.ALERT_FROM_EMAIL);
@@ -22,7 +23,7 @@ function buildEmail(subject: string, body: string, r: Recipient) {
   const html = `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#1d1d1b;max-width:600px">
 <p>${escapeHtml(greeting)}</p>${paragraphs}
 <p><strong>⚠️ We never charge fees. Apply only on official university websites.</strong></p>
-<p style="font-size:12px;color:#6a6a64">You're getting this because you subscribed at ${escapeHtml(siteUrl())}.
+<p style="font-size:12px;color:#6a6a64">You're getting this because you subscribed to ${escapeHtml(SITE_NAME)} at ${escapeHtml(siteUrl())}.
 <a href="${unsub}">Unsubscribe</a></p></div>`;
   const text = `${greeting}\n\n${body}\n\n⚠️ We never charge fees. Apply only on official university websites.\n\nUnsubscribe: ${unsub}`;
   return {

@@ -1,17 +1,18 @@
 import Link from "next/link";
 import { SiteNav, SiteFooter } from "../SiteChrome";
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import { listPosts } from "@/lib/posts";
 import { formatDate } from "@/lib/scholarships";
 
 export const revalidate = 300;
-export const metadata: Metadata = { title: "Updates – StudyAustralia Grants" };
+export const metadata: Metadata = { title: `Updates – ${SITE_NAME}` };
 
 export default async function UpdatesPage() {
   const posts = await listPosts();
   return (
     <>
-    <section className="page-band"><div className="wrap"><SiteNav dark /><h1>Updates &amp; guides</h1><p>News, tips and deadline reminders for students heading to Australia.</p></div></section>
+    <section className="page-band"><div className="wrap"><SiteNav dark /><h1>Updates &amp; guides</h1><p>News, tips and deadline reminders for students heading abroad.</p></div></section>
     <main className="wrap section">
       {posts.length === 0 ? (
         <p className="lede">No updates yet. Check back soon.</p>

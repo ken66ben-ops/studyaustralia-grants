@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "StudyAustralia Grants – real scholarships to study in Australia",
-  description: "Free, verified list of open scholarships at Australian universities: undergraduate, Master's and PhD, with official links and real deadlines. Independent; not affiliated with any university.",
+  title: `${SITE_NAME} – real scholarships to study abroad`,
+  description: "Free, verified list of open scholarships in Australia, New Zealand, Europe, the UK, the USA and Canada: undergraduate, Master's and PhD, with official links and real deadlines. Independent; not affiliated with any university.",
   openGraph: {
-    title: "StudyAustralia Grants",
-    description: "Real scholarships to study in Australia, checked against official university pages.",
+    title: SITE_NAME,
+    description: "Real scholarships to study abroad, checked against official university pages.",
     type: "website",
   },
 };

@@ -1,6 +1,8 @@
-# StudyAustralia Grants
+# Global Scholarship Hub
 
-An independent website listing **genuine, currently open scholarships** at Australian universities and the Australian Government. Not affiliated with any university.
+An independent website listing **genuine, currently open scholarships** in Australia & New Zealand, Europe & the UK, the USA and Canada. Not affiliated with any university.
+
+The site name comes from `NEXT_PUBLIC_SITE_NAME` (Vercel setting). Default: "Global Scholarship Hub".
 
 ## How it works
 
@@ -30,8 +32,10 @@ An independent website listing **genuine, currently open scholarships** at Austr
 | `international` | boolean | `true` if international students can apply |
 | `opens` | string or null | `YYYY-MM-DD`, or `null` if not stated |
 | `closes` | string | `YYYY-MM-DD` closing date (required) |
-| `url` | string | Official page (`.edu.au`, `.gov.au` or official program domain) |
+| `url` | string | Official university, government or program page (never an aggregator or blog) |
 | `notes` | string or null | Caveats, extra deadlines, time zone |
+| `country` | string | e.g. `Australia`, `New Zealand`, `United Kingdom`, `Canada` |
+| `region` | string | One of `oceania`, `europe`, `usa`, `canada` |
 
 ## Rules
 
@@ -44,7 +48,7 @@ An independent website listing **genuine, currently open scholarships** at Austr
 - **`/admin`** (password-protected): search everything, write blog posts and short updates (with an optional picture), add scholarships by hand, see and download subscribers, and send email alerts.
 - **`/updates`**: public list of posts. Each post has its own page.
 - **Subscribe form** on the home page saves visitors to the `subscribers` table. Every alert has an unsubscribe link (`/unsubscribe`).
-- Data lives in **Supabase**. Run `supabase/schema.sql` once in the Supabase SQL Editor.
+- Data lives in **Supabase**. Run `supabase/schema.sql` once in the Supabase SQL Editor. Existing databases: run `supabase/upgrade-regions.sql` once.
 - Settings go in Vercel → Settings → Environment Variables. See `.env.example`.
 - Without these settings the site still builds and shows the weekly list. The admin and sign-up parts switch on when the keys are added.
 - Email alerts use **Resend** and need a domain you own, verified in Resend.

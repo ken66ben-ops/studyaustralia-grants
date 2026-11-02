@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { isAdmin } from "@/lib/auth";
+import { SITE_NAME } from "@/lib/site";
 import { logout } from "./actions";
 
-export const metadata: Metadata = { title: "Admin – StudyAustralia Grants", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: `Admin – ${SITE_NAME}`, robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -17,7 +18,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             <Link href="/admin">Search</Link>
             <Link href="/admin/posts">Posts</Link>
             <Link href="/admin/scholarships">Scholarships</Link>
-            <Link href="/admin/subscribers">Subscribers</Link>
+            <Link href="/admin/subscribers">Members</Link>
+            <Link href="/admin/activity">Activity</Link>
             <Link href="/admin/alerts">Email alerts</Link>
             <Link href="/" target="_blank">View site ↗</Link>
             <form action={logout}><button className="link-btn">Log out</button></form>

@@ -1,5 +1,6 @@
 import raw from "@/data/scholarships.json";
 import { db } from "@/lib/supabase";
+import type { Region } from "@/lib/site";
 
 export type Scholarship = {
   id: string;
@@ -14,6 +15,9 @@ export type Scholarship = {
   closes: string;
   url: string;
   notes: string | null;
+  /** e.g. "Australia", "United Kingdom" */
+  country: string;
+  region: Region;
   /** "weekly" = from data/scholarships.json, "admin" = added in /admin */
   source?: "weekly" | "admin";
 };
@@ -23,7 +27,7 @@ const data = raw as Data;
 
 export const verified = data.verified;
 
-/** Today's date in Australia (Perth), as YYYY-MM-DD. */
+/** Today's date as YYYY-MM-DD (Perth time, the site's home time zone). */
 export function todayAU(): string {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Australia/Perth" }).format(new Date());
 }
@@ -36,18 +40,21 @@ export function isClosed(s: Scholarship, today = todayAU()): boolean {
 export async function adminScholarships(): Promise<Scholarship[]> {
   const client = db();
   if (!client) return [];
-  const { data: rows, error } = await client
-    .from("scholarships")
-    .select("id, university, name, amount, level, field, eligibility, international, opens, closes, url, notes")
-    .order("closes", { ascending: true });
-  if (error || !rows) return [];
-  return rows.map((r) => ({ ...r, source: "admin" as const })) as Scholarship[];
+  const base = "id, university, name, amount, level, field, eligibility, international, opens, closes, url, notes";
+  let res: { data: unknown[] | null; error: unknown } = await client.from("scholarships").select(`${base}, country, region`).order("closes", { ascending: true });
+  if (res.error) {
+    // Database not upgraded yet (no country/region columns): still show the rows.
+    res = await client.from("scholarships").select(base).order("closes", { ascending: true });
+  }
+  const rows = res.data;
+  if (res.error || !rows) return [];
+  return (rows as Partial<Scholarship>[]).map((r) => ({ ...r, country: r.country || "Australia", region: r.region || "oceania", source: "admin" as const })) as Scholarship[];
 }
 
 /** Weekly list + admin-added list. Open ones first (closing soonest), then recently closed. */
 export async function allScholarships(): Promise<Scholarship[]> {
   const today = todayAU();
-  const weekly = data.scholarships.map((s) => ({ ...s, source: "weekly" as const }));
+  const weekly = data.scholarships.map((s) => ({ ...s, country: s.country || "Australia", region: s.region || "oceania", source: "weekly" as const }));
   const extra = await adminScholarships();
   return [...weekly, ...extra].sort((a, b) => {
     const ca = isClosed(a, today), cb = isClosed(b, today);

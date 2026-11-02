@@ -5,6 +5,7 @@ import { db } from "@/lib/supabase";
 import { requireAdmin, passwordMatches, startSession, endSession } from "@/lib/auth";
 import { slugify } from "@/lib/posts";
 import { sendAlert } from "@/lib/email";
+import { COUNTRIES } from "@/lib/site";
 
 function text(form: FormData, key: string, max = 5000): string {
   return String(form.get(key) ?? "").trim().slice(0, max);
@@ -102,10 +103,15 @@ export async function createScholarship(form: FormData): Promise<void> {
   const back = (m: string) => redirect("/admin/scholarships?msg=" + encodeURIComponent(m));
 
   let host = "";
-  try { host = new URL(url).hostname; } catch { back("The link isn't a valid web address."); }
-  if (!/(\.edu\.au|\.gov\.au|\.edu|\.org|\.ac\.[a-z]{2})$/.test(host)) {
-    back("Use the official university or government page (usually ending in .edu.au or .gov.au).");
-  }
+  try { host = new URL(url).hostname.toLowerCase(); } catch { back("The link isn't a valid web address."); }
+  if (!url.startsWith("https://")) back("The link must start with https://");
+  const BLOCKED = ["opportunitydesk", "scholars4dev", "scholarshipsads", "scholarshipdb", "afterschoolafrica", "scholarshipportal", "worldscholarshipforum", "youthop", "opportunitiesforafricans", "scholarshiproar", "facebook.com", "t.me", "wa.me", "bit.ly"];
+  if (BLOCKED.some((b) => host.includes(b))) back("That looks like an aggregator, social or short link. Use the official university or government page.");
+  if (form.get("official") !== "on") back("Tick the box to confirm the link is the official university or government page.");
+
+  const country = text(form, "country", 80);
+  const match = COUNTRIES.find((c) => c.name === country);
+  if (!match) back("Choose the country.");
   if (!DATE_RE.test(closes)) back("Closing date is required.");
 
   const row = {
@@ -120,6 +126,8 @@ export async function createScholarship(form: FormData): Promise<void> {
     closes,
     url,
     notes: text(form, "notes", 600) || null,
+    country: match!.name,
+    region: match!.region,
   };
   if (!row.university || !row.name || !row.amount || !row.level || !row.eligibility) back("Please fill in every required box.");
 

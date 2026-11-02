@@ -31,8 +31,14 @@ create table if not exists public.scholarships (
   closes        date not null,
   url           text not null,
   notes         text,
+  country       text not null default 'Australia',
+  region        text not null default 'oceania' check (region in ('oceania', 'europe', 'usa', 'canada')),
   created_at    timestamptz not null default now()
 );
+
+-- Upgrade for databases created before regions existed (safe to re-run)
+alter table public.scholarships add column if not exists country text not null default 'Australia';
+alter table public.scholarships add column if not exists region  text not null default 'oceania';
 
 -- People who signed up for alerts
 create table if not exists public.subscribers (
@@ -65,3 +71,17 @@ alter table public.alerts       enable row level security;
 insert into storage.buckets (id, name, public)
 values ('media', 'media', true)
 on conflict (id) do nothing;
+
+-- Which registered member opened which scholarship (from the "Apply" button)
+create table if not exists public.clicks (
+  id               uuid primary key default gen_random_uuid(),
+  subscriber_id    uuid references public.subscribers(id) on delete cascade,
+  scholarship_id   text not null,
+  scholarship_name text not null,
+  university       text not null,
+  country          text,
+  url              text not null,
+  created_at       timestamptz not null default now()
+);
+create index if not exists clicks_created_at_idx on public.clicks (created_at desc);
+alter table public.clicks enable row level security;

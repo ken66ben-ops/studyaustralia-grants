@@ -37,6 +37,10 @@ export default async function AlertsAdmin({ searchParams }: Props) {
             <option value="masters">Interested in Master's</option>
             <option value="phd">Interested in PhD / research</option>
             <option value="international">Interested in international awards</option>
+            <option value="oceania">Want to study in Australia &amp; NZ</option>
+            <option value="europe">Want to study in Europe &amp; UK</option>
+            <option value="usa">Want to study in the USA</option>
+            <option value="canada">Want to study in Canada</option>
           </select>
         </label>
         <label>Subject *<input name="subject" required maxLength={200} placeholder="e.g. 3 scholarships closing this week" /></label>
