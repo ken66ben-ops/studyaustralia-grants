@@ -27,10 +27,6 @@ export function SiteFooter() {
           <p className="footer-logo">🎓 {a}<b>{b}</b></p>
           <p>A free, independent guide to real scholarships in Australia, New Zealand, Europe, the UK, the USA and Canada. Not affiliated with any university or government agency.</p>
         </div>
-        <div className="footer-warn">
-          <p><strong>⚠️ We never charge fees.</strong></p>
-          <p>Apply only on official university websites. If anyone asks you to pay for a scholarship, it&apos;s a scam.</p>
-        </div>
         <div className="footer-links">
           <Link href="/#scholarships">All scholarships</Link>
           <Link href="/updates">Updates &amp; guides</Link>
